@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #9feef1;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Keyframes Animasi Pop-Up */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.6) translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.calculator {
+    width: 260px;
+    background-color: #0b0b0b;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    
+    /* Efek animasi saat muncul */
+    animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 15px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn:active {
+    background-color: #ddd;
+    transform: scale(0.95); /* Efek membal saat tombol ditekan */
+}
+
+.operator {
+    background-color: #ff9500;
+    color: white;
+}
+
+.operator:active {
+    background-color: #e08900;
+}
+
+/* Mengatur tombol Reset dan Delete agar sejajar di baris bawah */
+.btn-reset {
+    background-color: #ff3b30;
+    color: white;
+    grid-column: span 2;
+}
+
+.btn-delete {
+    background-color: #555;
+    color: white;
+    grid-column: span 2;
+}
